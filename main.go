@@ -25,5 +25,5 @@ func main() {
 	Name := Name{}
 	json.Unmarshal(resp, &Name)
 
-	Printf("This pokemon's name is: %s\n", Name.Name)
+	Println("This pokemon's name is:", Name.Name)
 }
