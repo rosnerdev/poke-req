@@ -1,10 +1,11 @@
 package main
 
 import (
-	"encoding/json"
 	. "fmt"
 	. "io"
 	"net/http"
+
+	"github.com/bytedance/sonic"
 )
 
 type Name struct {
@@ -23,7 +24,7 @@ func main() {
 	resp, _ := ReadAll(req.Body)
 
 	Name := Name{}
-	json.Unmarshal(resp, &Name)
+	sonic.Unmarshal(resp, &Name)
 
 	Println("This pokemon's name is:", Name.Name)
 }
